@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Групи</h2>
+
+<ul>
+    {% for group in object_list %}
+        <li>
+            <a href="{% url 'education:group' group.id %}">
+                {{ group.name }}
+            </a>
+        </li>
+    {% endfor %}
+    </ul>
+
+    <table class="table table-hover">
+
+        {% for group in object_list %}
+        <tr>
+            <td>
+                <a href="{% url 'education:group' group.id %}">
+                    {{ group.name }}
+                </a>
+            </td>
+        </tr>
+    {% endfor %}
+
+        </table>
+
+
+{% endblock %}
